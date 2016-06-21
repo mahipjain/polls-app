@@ -1,6 +1,17 @@
+<!DOCTYPE html>
 {% load staticfiles %}
-
-<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="{% static 'polls/bootstrap/css/bootstrap.min.css' %}" />
+		<script src="{% static 'polls/bootstrap/js/bootstrap.min.js' %}" ></script>
+	</head>
+<body>
+<div class="container">
+	<div class="jumbotron">
+		<h1>Polls App</h1>
+	</div>
 {% if latest_question_list %}
 	<ul>
 	{% for question in latest_question_list %}
@@ -10,3 +21,7 @@
 {% else %}
 	<p>No polls are available.</p>
 {% endif %}
+<a href="/polls/register/">Register Here</a>
+</div>
+</body>
+</html>
