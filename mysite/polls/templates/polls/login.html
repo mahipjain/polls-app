@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="{% static 'polls/bootstrap/css/bootstrap.min.css' %}" />
+		<script src="{% static 'polls/bootstrap/js/bootstrap.min.js' %}"></script>
+	</head>
+
+<body>
+
+<div class ="container">
+	<div class="jumbotron">
+		<h1>Polls App</h1>
+	</div>
+	<h1>Login to Polls</h1>
+	
+	<form id="login_form" method="post" action="/polls/login/">
+		{% csrf_token %}
+		Username: <input type="text" name="username" value="" size="50" />
+		<br />
+		Password: <input type="password" name="password" value="" size="50" />
+		<br/>
+		<input type="submit" value="submit" />
+	</form>
+</div>
+</body>
+</html>

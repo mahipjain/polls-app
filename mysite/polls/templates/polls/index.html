@@ -12,6 +12,12 @@
 	<div class="jumbotron">
 		<h1>Polls App</h1>
 	</div>
+{% if user.is_authenticated %}
+<h1>Hey {{ user.username }}! </h1>
+{% else %}
+<h1>Hello World! </h1>
+{% endif %}
+
 {% if latest_question_list %}
 	<ul>
 	{% for question in latest_question_list %}
@@ -22,6 +28,8 @@
 	<p>No polls are available.</p>
 {% endif %}
 <a href="/polls/register/">Register Here</a>
+<br />
+<a href="/polls/login/">Login</a>
 </div>
 </body>
 </html>

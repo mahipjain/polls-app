@@ -1,9 +1,10 @@
 from django.shortcuts import render, get_object_or_404, render_to_response
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.core.urlresolvers import reverse
 from django.views import generic
 from django.utils import timezone
 from django.template import RequestContext
+from django.contrib.auth import authenticate, login
 
 from polls.models import Question, Choice
 from polls.forms import UserForm, UserProfileForm
@@ -65,3 +66,21 @@ def register(request):
 		'polls/register.html',
 		{'user_form':user_form, 'profile_form': profile_form, 'registered': registered},
 		context)
+
+def user_login(request):
+	context = RequestContext(request)
+	if request.method == 'POST':
+		username = request.POST['username']
+		password = request.POST['password']
+		user = authenticate(username=username, password=password)
+		if user:
+			if user.is_active:
+				login(request, user)
+				return HttpResponseRedirect('/polls/')
+			else:
+				return HttpResponse("Your Polls account is disabled.")
+		else:
+			print "Invalid login details: {0}, {1}".format(username, password)
+			return HttpResponse("Invalid login details supplied.")
+	else:
+		return render_to_response('polls/login.html', {}, context)
