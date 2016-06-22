@@ -122,3 +122,5 @@ STATIC_URL = '/static/'
 
 
 TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
+
+LOGIN_URL = '/polls/login/'
