@@ -1,10 +1,49 @@
 <!DOCTYPE html>
+{%load staticfiles%}
 <html>
     <head>
         <title>Polls</title>
+		<link rel="stylesheet" type="text/css" href="{% static 'polls/style/animate.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static 'polls/style/owl.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static 'polls/style/normalize.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static 'polls/bootstrap/css/bootstrap.min.css' %}" />
+		<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+
+
     </head>
 
     <body>
+	<form class="pure-form pure-form-aligned">
+    <fieldset>
+        <div class="pure-control-group">
+            <label for="name">Username</label>
+            <input id="name" type="text" placeholder="Username">
+        </div>
+
+        <div class="pure-control-group">
+            <label for="password">Password</label>
+            <input id="password" type="password" placeholder="Password">
+        </div>
+
+        <div class="pure-control-group">
+            <label for="email">Email Address</label>
+            <input id="email" type="email" placeholder="Email Address">
+        </div>
+
+        <div class="pure-control-group">
+            <label for="foo">Supercalifragilistic Label</label>
+            <input id="foo" type="text" placeholder="Enter something here...">
+        </div>
+
+        <div class="pure-controls">
+            <label for="cb" class="pure-checkbox">
+                <input id="cb" type="checkbox"> I've read the terms and conditions
+            </label>
+
+            <button type="submit" class="pure-button pure-button-primary">Submit</button>
+        </div>
+    </fieldset>
+</form>
         <h1>Register with Polls</h1>
 
         {% if registered %}

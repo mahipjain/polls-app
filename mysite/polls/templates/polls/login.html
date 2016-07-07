@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 {% load staticfiles %}
 <html lang="en">
@@ -5,26 +6,45 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" type="text/css" href="{% static 'polls/bootstrap/css/bootstrap.min.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static 'polls/style/animate.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static 'polls/style/owl.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static 'polls/style/normalize.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static 'polls/pure/pure/pure-min.css' %}" />
+		<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="{% static 'polls/style/custom.css' %}" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 		<script src="{% static 'polls/bootstrap/js/bootstrap.min.js' %}"></script>
 	</head>
 
 <body>
 
-<div class ="container">
-	<div class="jumbotron">
-		<h1>Polls App</h1>
+<div class ="page-wrap">
+	<div class="col-md-9"></div>
+	<div class="col-md-3">
+	<p style="display:inline;">Don't have an account?</p>
+	<a href="/polls/register/">Register Here</a>
 	</div>
-	<h1>Login to Polls</h1>
+	<main class="center-align login">
+	<h1 class="center">Login to Polls</h1>
 	
-	<form id="login_form" method="post" action="/polls/login/">
+	<form class="pure-form pure-form-aligned" id="login_form" method="post" action="/polls/login/">
+		<fieldset>
 		{% csrf_token %}
-		Username: <input type="text" name="username" value="" size="50" />
-		<br />
-		Password: <input type="password" name="password" value="" size="50" />
-		<br/>
-		<input type="submit" value="submit" />
+		<div class="pure-control-group">
+		<label>Username:</label>
+		<input type="text" name="username" value="" size="50" />
+		</div><div class="pure-control-group">
+		<label>Password:</label>
+		<input type="password" name="password" value="" size="50" />
+		</div><div class="pure-controls">
+		<input class= "pure-button pure-button-primary"type="submit" value="submit" />
+		</div>
+		</fieldset>
 	</form>
-<a href="/polls/register/">Register Here</a>
+	</main>
 </div>
+<footer class="site-footer text-muted">
+  <p class="container footer-text">Made by Mahip Jain<p>
+</footer>
 </body>
 </html>

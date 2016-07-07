@@ -5,14 +5,49 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" type="text/css" href="{% static 'polls/bootstrap/css/bootstrap.min.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static 'polls/style/animate.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static 'polls/style/owl.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static 'polls/style/normalize.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static 'polls/pure/pure/pure-min.css' %}" />
+		<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="{% static 'polls/style/custom.css' %}" />
+    
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 		<script src="{% static 'polls/bootstrap/js/bootstrap.min.js' %}"></script>
 	</head>
 <body>
 
-<div class ="container">
-	<div class="jumbotron">
-		<h1>Polls App</h1>
-	</div>
+<div class ="page-wrap">
+	<nav class="navbar header">
+  <div class="container">
+    <div class="navbar-header col-md-2">
+      <a class="navbar-brand" href="/polls/"><p class="head-text">Polls App</p></a>
+    </div>
+	<div class="col-md-8">
+	<form class="navbar navbar-nav pure-form col-md-12" style="display: inline">
+    <fieldset class="col-md-12 search">
+        <input class="pure-input-2-3"type="text" placeholder="Search...">
+        <button type="submit" class="pure-button pure-button-primary">Search</button>
+    </fieldset>
+	</form></div>
+	
+    <!--<ul class="nav navbar-nav navbar-right col-md-2">
+
+    	<li>Hey {{ user.username }}! <a href="/polls/logout/"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+    </ul>-->
+    <ul class="nav navbar-nav col-md-2 ">
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{ user.username }}
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Edit Profile</a></li>
+          <li><a href="#">Setting</a></li>
+          <li><a href="/polls/logout/">Logout</a></li>
+        </ul>
+
+  </div>
+</nav>
+<main class="container center">
 <h1>{{ question.question_text }}</h1>
 
 <ul>
@@ -21,11 +56,14 @@
 {% endfor %}
 </ul>
 
-<a href="{% url 'polls:detail' question.id %}"> Vote again?</a>
-<br />
-<a href="/polls/logout/">Logout</a>
+<a class="pure-button pure-button-primary top-padding black" href="{% url 'polls:detail' question.id %}"> Vote again?</a>
+</main>
 
 </div>
+
+<footer class="site-footer text-muted">
+  <p class="container footer-text">Made by Mahip Jain<p>
+</footer>
 
 </body>
 </html>
