@@ -5,7 +5,7 @@
 }
 html, body {
   
-  height: 98%;
+  height: 99%;
 } 
 
 body{
@@ -15,14 +15,14 @@ line-height: 1.6;
 .page-wrap {
   min-height: 100%;
   /* equal to footer height */
-  margin-bottom: -50px; 
+  margin-bottom: -40px; 
 }
 .page-wrap:after {
   content: "";
   display: block;
 }
 .site-footer, .page-wrap:after {
-  height: 50px; 
+  height: 40px; 
 }
 
 .site-footer {
@@ -73,11 +73,42 @@ line-height: 1.6;
 }
 
 .center-align {
-  width: 600px;
+  width: 400px;
   margin-left: auto;
   margin-right: auto;
 }
 
 .login{
-  margin-top: 400px !important;
+  width: 500px;
+  margin: auto;
+  margin-top: 160px;
+}
+
+.submit {
+  margin-left: 11.2em !important;
+}
+
+.register p{
+  margin: 5px 0 5px 0 !important;
+}
+
+.helptext {
+  visibility: hidden;
+  font-size: 1px;
+}
+
+#user_form{
+  margin-top: 80px;
+}
+
+#user_form input{
+  width: 200px;
+}
+
+.register-button{
+  margin-left: 157px !important;
+}
+
+form h1{
+  text-align: center;
 }

@@ -19,29 +19,38 @@
 <body>
 
 <div class ="page-wrap">
-	<div class="col-md-9"></div>
-	<div class="col-md-3">
-	<p style="display:inline;">Don't have an account?</p>
-	<a href="/polls/register/">Register Here</a>
-	</div>
-	<main class="center-align login">
+<nav class="navbar header">
+  	<div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/polls/"><p class="head-text">Polls App</p></a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="/polls/register/"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+     </ul>
+    </div>
+</nav>
+	<div class="login">
 	<h1 class="center">Login to Polls</h1>
 	
 	<form class="pure-form pure-form-aligned" id="login_form" method="post" action="/polls/login/">
 		<fieldset>
 		{% csrf_token %}
 		<div class="pure-control-group">
-		<label>Username:</label>
-		<input type="text" name="username" value="" size="50" />
-		</div><div class="pure-control-group">
-		<label>Password:</label>
-		<input type="password" name="password" value="" size="50" />
-		</div><div class="pure-controls">
-		<input class= "pure-button pure-button-primary"type="submit" value="submit" />
+			<label>Username:</label>
+			<input type="text" name="username" value="" size="50" />
+		</div>
+
+		<div class="pure-control-group">
+			<label>Password:</label>
+			<input type="password" name="password" value="" size="50" />
+		</div>
+
+		<div class="pure-controls submit">
+			<input class= "pure-button pure-button-primary" type="submit" value="Log In" />
 		</div>
 		</fieldset>
 	</form>
-	</main>
+	</div>
 </div>
 <footer class="site-footer text-muted">
   <p class="container footer-text">Made by Mahip Jain<p>
