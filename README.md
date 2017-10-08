@@ -1,0 +1,1 @@
+This is a sample Django app that lets people view polls and vote in them.
